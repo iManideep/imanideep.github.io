@@ -34,11 +34,11 @@ const projectsobserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting){
             entry.target.classList.add('project-show');
-            // document.getElementsByClassName('navbar-projects')[0].classList.add('active')
+            document.getElementsByClassName('navbar-projects')[0].classList.add('active')
         }
         else{
             entry.target.classList.remove('project-show');
-            // document.getElementsByClassName('navbar-projects')[0].classList.remove('active')
+            document.getElementsByClassName('navbar-projects')[0].classList.remove('active')
         }
     });
 });
