@@ -29,3 +29,19 @@ const aboutobserver = new IntersectionObserver((entries) => {
 
 const abouthiddenElements = document.querySelectorAll('.about-hidden');
 abouthiddenElements.forEach((elem) => aboutobserver.observe(elem));
+
+const projectsobserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting){
+            entry.target.classList.add('project-show');
+            // document.getElementsByClassName('navbar-projects')[0].classList.add('active')
+        }
+        else{
+            entry.target.classList.remove('project-show');
+            // document.getElementsByClassName('navbar-projects')[0].classList.remove('active')
+        }
+    });
+});
+
+const projectshiddenElements = document.querySelectorAll('.project-hidden');
+projectshiddenElements.forEach((elem) => projectsobserver.observe(elem));
